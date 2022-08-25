@@ -1,0 +1,31 @@
+.prg {
+    &.hide{
+        display: none;
+    }
+    padding: 0px 5% ;
+    line-height: 2;
+    margin-bottom: 90px;
+        &__titulo{
+            @extend .txt;
+            margin: 5.5em 0 2em;
+        }
+        &__p {
+            margin-bottom: 1rem;
+        }
+        &__link{
+            cursor: pointer;
+            color: $coloraqua;
+            text-decoration: none ;
+            font-weight: bold;
+            &:hover{
+                color:   #ef8585;
+            }
+        }
+}
+.divProductos{
+    display: none;
+    &.hide{
+        display: block;
+    }
+}
+

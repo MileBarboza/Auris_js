@@ -2,5 +2,519 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
 }
+html{
+    height: 100%;
+}
+body {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    transition: ease .3s;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: transparent;
+}
+#productosAuris{
+    margin-top: 7em;
+}
+// _______________________________  MODE DARK 
+.darkmode {
+    background-color:#333;     
+    color: $colorwhite;  
+    .som-dark{
+        box-shadow: $sombra-dark;
+    }
+    .darkCont{
+    background-color:#333;     
+    border: 1px solid rgb(71, 70, 70);
+    box-shadow: $sombra-dark;
+    }
+    p,h2,.dark{
+        color: $colorwhite;  
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.067);
+    }
+    .dark-footer{
+        background: rgb(143, 155, 152);
+    }
+    .swal{
+        color: #000;
+    }
+    .home-dark {
+        background: radial-gradient( circle, rgba(244, 255, 215, 1) 0%, rgb(173, 122, 91) 100%);
+        box-shadow: $sombra-dark;
+    }
+    .txt-dark{
+        color: #000;
+    }
+    .navbar-dark a{
+        color: rgb(163, 42, 9);
+            &:hover{
+                color: rgb(207, 66, 85);
+            }
+    }
+  }
+  .dark-mode-toggle {      
+    position: absolute;
+    z-index: 10;
+    top: 6em;
+    left: 2em;
+    background: transparent;
+    width: 15px;
+    height: 15px;
+    border: none;
+    cursor: pointer;
+  }
+// _______________________________  MENU
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;     
+    top: 0; left: 0 ; right: 0;
+    padding: 0  1rem ;
+}
+.logo{
+    color: rgb(0, 0, 0);
+    font-size: 2.5em;
+        &:hover{
+            transform: scale(1.05) ;
+            transition: all 0.3s;
+    }
+}
+.navbar a {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration:none;
+    color: rgb(225, 120, 136);
+    margin: 1em;
+        &:hover{
+            color: rgb(242, 82, 103);
+        }
+}
+#menu {
+    font-size: 1.5em;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}   
+.icons{
+    display: flex;
+    align-items: center;
+}
+.material-symbols-outlined {
+    font-size: 30px;
+    position: relative;
+    top: 2px;
+}
+// _______________________________  HOME
+#auris-hide{
+    &.hide{
+        display: none;
+    }
+}
+.auris{
+    text-decoration: none;
+    color: #000;
+    &:hover{
+        color: #000;
+    }
+}
+.home{
+    background: radial-gradient( circle, rgb(250, 255, 254) 0%, rgb(223, 204, 193) 100%);
+    box-shadow:  2px 4px 10px rgba(0, 0, 0, 0.05);
+    height: 100vh;
+    &.hide{
+        display: none;
+    }
+    @extend .contenedor;
+    padding: 1.5rem 7%;
+        &__txt {
+            text-align: center;
+            flex: 1 2 40rem;
+            padding-left: 2em;
+            margin: 0 7%;
+        }
+        &__titulo {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-top: 10%;
+        }
+        &__img {
+            flex: 1 1 30rem;
+        }
+        &__img__mini {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            margin: auto;
+            img {
+                width: 100px;
+                margin: 10% 2%;
+                transition: all 0.3s;
+                &:hover{
+                    transform: scale(1.03);
+                }
+            }
+        }
+        &__imgProduct {
+            width: 100%;
+            padding: 20px 0 0;
+        }
+}
+.redes-home{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &__img{
+    margin: 10px 0;
+    }
+}
+// ____________________________    BUSCADOR  
+#buscador-hide{
+    &.hide{
+        display: none;
+    }
+}
+.contenedor-buscador{
+    @extend .contenedor;
+}
+.box{
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: rgb(255, 255, 250);
+    border-radius: 30px;
+    align-items: center;
+    margin: 3rem 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.box:hover input{ 
+    width: 300px; 
+}
+.box input {
+    width: 0;
+    width: 150px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+    }
+// ____________________________    MARCAS  
+.carru_marcas2{
+    display: none;
+}
+#filtro{
+    &.hide{
+        display: none;
+    }
+    margin:70px auto 100px;
+    max-width: 1000px;
+}
+.btnMarca{
+    position: relative;
+    &__hijo{
+        position: absolute;
+        top: 0em;
+        left: 0em;
+        height: 70px;
+        width: 70px;
+        color: transparent;
+        cursor: pointer;
+    }
+}
+.marcas{
+    display: flex;
+    justify-content: space-between;
+    &__img{
+        background: rgb(244, 244, 242);
+        border-radius: 10px;
+        width:70px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        transition: all 0.4s ;
+    }
+}
+// _________________________   CARRITO  
+.bolsita{
+    background: none;
+    border: none;
+}
+#contadorCarrito{
+    font-size: 13px;
+}
+#mostrarFavorito{
+    font-size: 13px;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+// ____________________________   FOOTER
+footer{
+    background: rgb(188, 199, 197);
+    background: rgb(169, 179, 177);
+    width: 100%;
+    color:$colorwhite;
+    margin-top: auto;
+}
+.footer{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 20px 0 ;
+        &__pre{
+            margin: 0 5%;
+        }
+        &__contacto{
+            text-align: center;
+            line-height: 2rem;
+            &--titulo{
+                margin-top: 12px;
+            }
+        }
+        &__copy{              
+            background-color: #000;
+            font-size: .9rem;
+            color: $colorwhite;
+            text-align: center;
+            padding: 5px;
+            margin: 0;
+        }
+        &__navbar li a{
+            text-decoration: none;
+            list-style: none;
+            color: $colorwhite;
+            line-height: 2em;
+            font-weight: bold;
+            &:hover{
+                color: rgb(235, 70, 103);
+            }
+        }
+        &__svg{
+            color: #000;
+            &--redes{
+                margin: 5px;
+                color: #000;
+                &--github{
+                    color: #000;
+                    &__h{
+                        color: #000;
+                        margin-left: 5px;
+                        &:hover{
+                            border-radius:50px;
+                            box-shadow: 1px 1px 10px 2px rgb(231, 234, 251);
+                        }
+                    }
+                    &:hover{
+                        border-radius:50px;
+                        box-shadow: 1px 1px 10px 2px rgb(231, 234, 251);
+                    }
+                }
+            }
+        }
+        &__conta{
+            margin: 6px;
+        }
+}
+.fa-envelope{
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+}
+.redesS{
+    width: 25px;
+    transition: all 0.4s ;
+    &:hover {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+// ____________________________   MEDIAQUERI
 
+@media screen and (max-width: 992px) {
+    .home{
+        @extend .contenedor;
+        padding: 4% 5% 0 7% ;
+            &__txt{
+                flex: 1 2 20rem;
+                padding: 0;
+            }
+            &__imgProduct {
+                width: 100%;
+            }
+    }
+    .marcas {
+        margin: 0 5%;
+    }
+}
+@media (max-width:768px ) {
+    #menu{
+        display:block; 
+        padding: 0;
+    }
+    .darkmode{
+        .navbar {
+            background:#333;  
+            border: 1px solid rgb(71, 70, 70);
+            box-shadow: $sombra-dark;
+            
+        }
+    }
+    .navbar {
+        position: absolute;  
+        z-index: 100;
+        width: 98%;
+        background: rgb(252, 251, 251);  
+        top: 100%; 
+        left: -120%;  
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+            &.active{
+                left: 0;
+            }
+    }   
+    .home{
+        flex-direction: column-reverse;
+        padding: 0 ;
+        max-height: 670px;
+            &__img{
+                flex: 1 1 0;
+                max-width: 460px;
+                padding-top: 2.6rem;
+            }
+            &__txt{
+                text-align: center;
+                flex: 1 2 0;
+                padding: 1rem 2rem;
+            }
+            &__imgProduct {
+                padding: 0;
+                width: 95%;
+                display: block;
+                margin: auto;
+            }
+            &__img__mini {
+                margin: 0;
+                gap: 0;
+                img {
+                    margin: 0;
+                    width: 80px;
+                }
+            }
+            &__titulo {
+                margin-top: 0;
+                font-size: 2rem;
+            }
+            &__decri {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
+        }
+    .redes-home{
+        position: absolute;
+        right: 3em;
+        top: 20%;
+        &__img{
+            margin: 10px;
+        }
+    }
+    #filtro{
+        max-width: 600px;
+    }
+    .carru_marcas1{
+        display: none;
+    }
+    .carru_marcas2{
+        display: block;
+    }
+    .btnMarca{
+        &__hijo{
+            top: 1em;
+            left: 1.4em;
+        }
+    }
+    .marcas{
+        &__img{
+            margin: 0 1.5rem;
+        }
+    }
+    .flecha{
+        width: 25px;
+    }
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-items: center;
+        align-items: center;
+        gap: 40px;
+            &__contacto{
+                text-align: start;
+                text-align: center;
+            }
+    }
+}
+@media (max-width:510px ) {
+    .home{
+        &__img{
+            flex: 1 1 0;
+        }
+        &__txt{
+            padding: 0 0;
+        }
+        &__imgProduct {
+            width: 95%;
+        }
+    }
+    .redes-home{
+        right: 5%;
+    }
+    #filtro {
+        margin: 50px 5%;
+    }
+    .marcas{
+      &__img{
+          margin:0 .9rem;
+      }
+    }
+}
+@media (max-width:470px ) {
+    .home {
+        &__imgProduct {
+        width: 90%;
+        }
+        &__txt {
+        margin-top: 1rem;
+        }
+    }
+    .box:hover input{ 
+        width: 230px; 
+    }
+    #filtro {
+        margin: 50px 5%;
+    }
+    .btnMarca{
+        &__hijo{
+            height: 60px;
+            width: 45px;
+            top: 0.4em;
+            left: 1em;
+        }
+    }
+    .marcas{
+        &__img{
+            margin:0 5px;
+            width:60px;
+        }
+    }
+    .flecha{
+        width: 15px;
+    }
+}

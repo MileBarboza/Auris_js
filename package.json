@@ -1,7 +1,7 @@
 {
   "name": "auris_js",
   "version": "1.0.0",
-  "description": "",
+  "description": "somos Auris, un e-commerce que nos enfocamos a una amplia variedad de Auriculares",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,3 +10,5 @@
   "author": "",
   "license": "ISC"
 }
+
+

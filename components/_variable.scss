@@ -1,0 +1,31 @@
+$colorwhite:  white;
+$colorsire:  linear-gradient(20deg,rgb(254, 191, 207) 27%,rgb(169, 255, 213));
+$colorsire-hover: linear-gradient(20deg,rgb(253, 146, 173) 27%,rgb(125, 229, 179));
+$colorconfi:  linear-gradient(20deg,rgb(214, 166, 217) 27%,rgb(145, 239, 194));
+$colorconfi-hover:  linear-gradient(20deg,rgb(193, 133, 196) 27%,rgb(145, 240, 194));
+$colorvaciar:  linear-gradient(20deg,#6eceb2 17%,rgb(145, 240, 194));
+$colorvaciar-hover:  linear-gradient(20deg,#52ba9b 27%,rgb(116, 223, 171));
+$coloraqua:  #6eceb2;
+
+$sombra-cards:0 4px 5px rgba(0, 0, 0, 0.05);
+$sombra: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.141);
+$sombra-dark: 0 4px 5px rgba(0, 0, 0, 0.201);
+
+.contenedor {          // @extend 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.txt{               // @extend 
+    text-align: center;
+    font-weight: bold;
+}
+@mixin btncto($pading,$fondo,$radius:20px) {    // @mixins
+    border: none;   
+    padding:$pading;
+    color: $colorwhite;
+    background: $fondo;
+    box-shadow:  $sombra;
+    border-radius: $radius;
+    @extend .txt;
+}
