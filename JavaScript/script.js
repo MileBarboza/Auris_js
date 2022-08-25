@@ -67,7 +67,7 @@ function mostrarProducto(auris){
         div.innerHTML += `
         <div class="conte darkCont">
             <button id="favorito${producto.id}" class="conte__favorito dark"><span class="material-symbols-outlined">favorite</span></button>
-            <img src=${producto.img} alt="Productos Auris" class="conte__img">
+            <img src="${producto.img}" alt="Productos Auris" class="conte__img">
             <h2 class="conte__titulo" ><strong>${producto.marca} - ${producto.nombre}</strong></h2>
             <p> ${producto.tipo}</p>
             <p class="conte__precio">$ ${producto.precio}</p>
@@ -127,7 +127,7 @@ function verCarrito(){
             divProductoCarrito.innerHTML +=`
             <div class="conte-carrito-div">
                 <div id="producto${producto.id}" class="conte-carrito darkCont row">
-                    <img class="conte-carrito__img col-2"src="${producto.img}"  alt="Productos Auris">
+                    <img class="conte-carrito__img col-2" src="${producto.img}"  alt="Productos Auris">
                     <h2 class="conte-carrito__txt__titulo col-2">${producto.marca} ${producto.nombre}</h2>
                     <p class="conte-carrito__precioUnid col-2 ">$${producto.precio}</p>
                     <p class="conte-carrito__txt col-2"><button onclick="agregarCarrito(${producto.id})"  class="btn btn-outline-info btn-sm ">+</button> ${producto.cantidad} <button onclick="quitarDelCarrito(${producto.id})"  class="btn btn-outline-info btn-sm ">-</button></p>
@@ -274,7 +274,7 @@ function verFavorito(){
         divProductos.innerHTML +=`
         <div class="conte darkCont">
             <button onclick="eliminarFavorito(${producto.id})" class="conte__favorito dark"> <span class="material-symbols-outlined">favorite</span> </button>
-            <img src=${producto.img} alt="Productos Auris" class="conte__img">
+            <img src="${producto.img}" alt="Productos Auris" class="conte__img">
             <h2 class="conte__titulo" ><strong>${producto.marca} - ${producto.nombre}</strong></h2>
             <p> ${producto.tipo}</p>
             <p class="conte__precio">$ ${producto.precio}</p>
